@@ -1,13 +1,136 @@
-body {
+* {
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  height: 100vh;
+  font-family: "Poppins", serif;
+
+}
+
+.heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 5rem;
+  background-image: url(./assets/images/t2.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 200px;
+}
+
+.banner {
+  display: flex;
+  justify-content: center; /* Center the images */
+  align-items: center; /* Center vertically */
+  flex-wrap: wrap; /* Allow wrapping if needed */
+  gap: 0.2rem; /* Space between images */
+  background-color: #222;
+}
+
+.banner img {
+  width: 11vw; /* Set a default width */
+  height: 50vh; /* Maintain aspect ratio */
+  transition: transform 0.3s ease; /* Smooth transition for scaling */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  border-radius: 6px;
+  position: relative; /* Position relative for the pseudo-element */
+  overflow: hidden; /* Hide overflow for the border effect */
+}
+
+.banner img:focus,
+.banner img:hover {
+  transform: scale(1.1); /* Scale up the image slightly */
+  z-index: 1; /* Bring the focused or hovered image to the front */
+}
+
+/* Create the colorful border effect */
+.banner img::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 6px; /* Match the image border radius */
+  background: linear-gradient(45deg, #ff007f, #ff7f00, #7fff00, #00ff7f, #007fff, #7f00ff, #ff007f);
+  background-size: 300%; /* Increase the size for animation */
+  z-index: -1; /* Place behind the image */
+  transition: background-position 0.5s ease; /* Smooth transition for background */
+}
+
+/* Animation effect on hover or focus */
+.banner img:hover::before,
+.banner img:focus::before {
+  background-position: 100%; /* Animate the gradient */
+}
+
+
+
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  background-image: url(./assets/images/w2.jpg);
+  background-size: cover;
+  /* Makes the background cover the entire body */
+  border: 2px solid rgb(196, 193, 11);
+  background-repeat: no-repeat;
+}
+
+.images-card {
+
+
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+
+
+}
+
+
+
+.figcont {
+  margin: 4rem;
+  border-radius: 10px;
+  border: 1px solid rgb(66, 185, 214);
+  cursor: pointer;
+  position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+.figcont:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  
+}
+
+figcaption {
+  color: rgb(248, 247, 246);
+  font-weight: bold;
+  font-size: larger;
+
+  
+}
+
+.figcont img {
+  width: 20%;
+  border-radius: 10px;
+  width: 300px;
+  height: 450px;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+
+
+}
+
+.figcont:hover img {
+  filter: grayscale(0%);
+
 }
